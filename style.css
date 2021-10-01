@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   min-height: 100vh;
   background-color: #edf8ff;
 }
@@ -34,6 +35,9 @@ body {
   border-top-right-radius: 150px;
   z-index: 9;
   overflow: hidden; /*.bottomの子要素のspan部分は、.bottomを超えた範囲以降は隠されるようにした*/
+}
+.box:nth-child(2) .bottom {
+  background-color: #ffcc14;
 }
 
 .bottom::before {
@@ -92,4 +96,144 @@ body {
   height: 100px;
   background-color: #6192a1;
   transform: rotate(15deg);
+}
+
+.box:nth-child(2) .bottom span,
+.box:nth-child(2) .bottom span::before,
+.box:nth-child(2) .bottom span::after {
+  background-color: #d9174c;
+}
+.neck {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 100px;
+  background-color: #ffcfcc;
+  z-index: 10;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.neck::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
+}
+
+.face {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 180px;
+  background: #ffcfcc;
+  border-radius: 50%;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+  z-index: 12;
+}
+
+.eyes {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 65%; /* この親要素eyesにこの横幅があることで、子要素eyeの可動域が広がり、子要素同士の距離がjustify-contentで保たれる */
+}
+
+.eyes .eye {
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+.eyes .eye::before {
+  /* 眉毛 */
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  /* background-color: #f00; */
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 -3px 0 #111; /* box-shadowは、左右px 上下px ぼかしpx 色 */
+}
+
+.eyes .eye i {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.eyes .eye i::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #111; /* 瞳孔 */
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #3d5d89; /* 虹彩 */
+  transform: translate(-10px, 2px);
+}
+
+.mouth {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 30px;
+  background-color: #ff4e57;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.2); /* insetオプションで、内側に影を作る */
+}
+
+.face:hover .mouth {
+  height: 15px;
+  width: 70px;
+  bottom: 40px;
+  border-radius: 30px;
+}
+
+.face:hover {
+  cursor: pointer;
+}
+
+.hair {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 230px;
+  height: 450px;
+  background-color: #111;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+}
+
+.box:nth-child(2) .hair {
+  bottom: 200px;
+  height: 250px;
+  border-radius: 50%;
 }
