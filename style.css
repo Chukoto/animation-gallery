@@ -210,3 +210,15 @@ body {
 .face:hover {
   cursor: pointer;
 }
+
+.hair {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 230px;
+  height: 450px;
+  background-color: #111;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+}
