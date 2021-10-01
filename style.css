@@ -116,3 +116,73 @@ body {
   height: 75%;
   background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
 }
+
+.face {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 180px;
+  background: #ffcfcc;
+  border-radius: 50%;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+  z-index: 12;
+}
+
+.eyes {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 65%; /* この親要素eyesにこの横幅があることで、子要素eyeの可動域が広がり、子要素同士の距離がjustify-contentで保たれる */
+}
+
+.eyes .eye {
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+.eyes .eye::before {
+  /* 眉毛 */
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  /* background-color: #f00; */
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 -3px 0 #111; /* box-shadowは、左右px 上下px ぼかしpx 色 */
+}
+
+.eyes .eye i {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.eyes .eye i::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #111; /* 瞳孔 */
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #3d5d89; /* 虹彩 */
+  transform: translate(-10px, 2px);
+}
