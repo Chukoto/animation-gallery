@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   min-height: 100vh;
   background-color: #edf8ff;
 }
@@ -34,6 +35,9 @@ body {
   border-top-right-radius: 150px;
   z-index: 9;
   overflow: hidden; /*.bottomの子要素のspan部分は、.bottomを超えた範囲以降は隠されるようにした*/
+}
+.box:nth-child(2) .bottom {
+  background-color: #ffcc14;
 }
 
 .bottom::before {
@@ -94,6 +98,11 @@ body {
   transform: rotate(15deg);
 }
 
+.box:nth-child(2) .bottom span,
+.box:nth-child(2) .bottom span::before,
+.box:nth-child(2) .bottom span::after {
+  background-color: #d9174c;
+}
 .neck {
   position: absolute;
   bottom: 140px;
@@ -221,4 +230,10 @@ body {
   background-color: #111;
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
+}
+
+.box:nth-child(2) .hair {
+  bottom: 200px;
+  height: 250px;
+  border-radius: 50%;
 }
