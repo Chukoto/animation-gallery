@@ -186,3 +186,27 @@ body {
   box-shadow: 0 0 0 5px #3d5d89; /* 虹彩 */
   transform: translate(-10px, 2px);
 }
+
+.mouth {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 30px;
+  background-color: #ff4e57;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.2); /* insetオプションで、内側に影を作る */
+}
+
+.face:hover .mouth {
+  height: 15px;
+  width: 70px;
+  bottom: 40px;
+  border-radius: 30px;
+}
+
+.face:hover {
+  cursor: pointer;
+}
