@@ -93,3 +93,30 @@ body {
   background-color: #6192a1;
   transform: rotate(15deg);
 }
+
+.neck {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 100px;
+  background-color: #ffcfcc;
+  z-index: 10;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.neck::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
+}
+
+.neck::after {
+  content: '';
+}
