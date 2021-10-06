@@ -8,57 +8,111 @@
       content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="main.js" defer></script>
     <title>Document</title>
   </head>
   <body>
-    <div class="box">
-      <div class="hair"></div>
-      <div class="bottom">
-        <span></span>
-      </div>
-      <div class="head">
-        <div class="neck"></div>
-        <div class="face">
-          <div class="eyes">
-            <span class="eye"><i></i></span>
-            <span class="eye"><i></i></span>
+    <div id="eye-animation">
+      <div class="box">
+        <div class="hair"></div>
+        <div class="bottom">
+          <span></span>
+        </div>
+        <div class="head">
+          <div class="neck"></div>
+          <div class="face">
+            <div class="eyes">
+              <span class="eye"><i></i></span>
+              <span class="eye"><i></i></span>
+            </div>
+            <div class="mouth"></div>
           </div>
-          <div class="mouth"></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="hair"></div>
+        <div class="bottom">
+          <span></span>
+        </div>
+        <div class="head">
+          <div class="neck"></div>
+          <div class="face">
+            <div class="eyes">
+              <span class="eye"><i></i></span>
+              <span class="eye"><i></i></span>
+            </div>
+            <div class="mouth"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="box">
-      <div class="hair"></div>
-      <div class="bottom">
-        <span></span>
-      </div>
-      <div class="head">
-        <div class="neck"></div>
-        <div class="face">
-          <div class="eyes">
-            <span class="eye"><i></i></span>
-            <span class="eye"><i></i></span>
-          </div>
-          <div class="mouth"></div>
+    <div id="javascript-checker">
+      <div class="box">
+        <div class="square">
+          <p class="square-serif">100pxでーす</p>
         </div>
+        <p>現在</p>
+        <h4>ウィンドウのサイズ</h4>
+        <p>
+          innerWidthは...
+          <span class="innerWidthResult"></span>
+        </p>
+        <p>
+          innerHeightは...
+          <span class="innerHeightResult"></span>
+        </p>
+        <br />
+        <h4>ウィンドウ内のカーソル位置</h4>
+        <p>
+          clientXは...
+          <span class="clientXResult"></span>
+        </p>
+        <p>
+          clientYは...
+          <span class="clientYResult"></span>
+        </p>
+        <br />
+        <h4>要素基準のカーソル位置</h4>
+        <p>
+          offsetXは...
+          <span class="offsetXResult"></span>
+        </p>
+        <p>
+          offsetYは...
+          <span class="offsetYResult"></span>
+        </p>
+        <br />
+        <h4>ウィンドウ内のカーソル位置（スクロール含む）</h4>
+        <p>
+          pageXは...
+          <span class="pageXResult"></span>
+        </p>
+        <p>
+          pageYは...
+          <span class="pageYResult"></span>
+        </p>
+        <br />
+        <h4>スクエアちゃん ウィンドウの四方端までの距離</h4>
+        <p>
+          topは...
+          <span class="gbcrTopResult"></span>
+        </p>
+        <p>
+          bottomは...
+          <span class="gbcrBottomResult"></span>
+        </p>
+        <p>
+          rightは...
+          <span class="gbcrRightResult"></span>
+        </p>
+        <p>
+          leftは...
+          <span class="gbcrLeftResult"></span>
+        </p>
       </div>
+      <div class="box"></div>
     </div>
-    <script>
-      document
-        .querySelector('body')
-        .addEventListener('mousemove', eyeball);
-
-      function eyeball() {
-        let eye = document.querySelectorAll('.eye i');
-        eye.forEach(function (eye) {
-          let x = eye.getBoundingClientRect().left;
-          let y = eye.getBoundingClientRect().top;
-          let radian = Math.atan2(event.pageX - x, event.pageY - y);
-          let rot = radian * (180 / Math.PI) * -1 + 270;
-          eye.style.transform = 'rotate(' + rot + 'deg)';
-        });
-      }
-    </script>
   </body>
 </html>
